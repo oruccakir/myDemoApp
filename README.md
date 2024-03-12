@@ -3,7 +3,7 @@
 
 
 heroku app address
-Raeal deployed site : https://dry-cove-58183-9d5a8d795a80.herokuapp.com/compute
+Real deployed site : https://dry-cove-58183-9d5a8d795a80.herokuapp.com/compute
 
 
 README for MyCompany App
