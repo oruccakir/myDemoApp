@@ -36,7 +36,6 @@ After setting up the project, you can run the application using Maven. The appli
 bash
 Copy code
 mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
-Navigate to http://localhost:4567/ in your web browser to view the application.
 
 Running the Tests
 The project includes unit tests for testing the functionality of the search method within the application. You can run these tests using Maven:
