@@ -13,14 +13,22 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
-    public static boolean search(ArrayList<Integer> array, int e) {
+    public static boolean search(ArrayList<Integer> array, ArrayList<Integer>arr,ArrayList<String> strings, String s) {
       System.out.println("inside search");
       if (array == null) return false;
-
-      for (int elt : array) {
-        if (elt == e) return true;
+      if(arr == null) return false;
+      for(Integer i : arr){
+        if(array.contains(i) == false){
+            return false;
+        }
       }
-      return false;
+
+      for(String str : strings){
+        if(str.contains(s) == false)
+        return false;
+        }
+      
+      return true;
     }
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
@@ -42,12 +50,32 @@ public class App
           }
           System.out.println(inputList);
 
+          String input2 = req.queryParams("input2");
+          java.util.Scanner sc2 = new java.util.Scanner(input2);
+          sc2.useDelimiter("[;\r\n]+");
+          java.util.ArrayList<Integer> inputList2 = new java.util.ArrayList<>();
+          while (sc2.hasNext())
+          {
+            int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
+            inputList2.add(value);
+          }
+          System.out.println(inputList2);
 
-          String input2 = req.queryParams("input2").replaceAll("\\s","");
-          int input2AsInt = Integer.parseInt(input2);
+          String input3 = req.queryParams("input1");
+          java.util.Scanner sc3 = new java.util.Scanner(input3);
+          sc3.useDelimiter("[;\r\n]+");
+          java.util.ArrayList<String> inputList3 = new java.util.ArrayList<>();
+          while (sc3.hasNext())
+          {
+            String value = sc1.next().replaceAll("\\s","");
+            inputList3.add(value);
+          }
+          System.out.println(inputList);
 
-          boolean result = App.search(inputList, input2AsInt);
+          String input4 = req.queryParams("input2").replaceAll("\\s","");
 
+        boolean result = App.search(inputList, inputList2, inputList3, input4);
+        
          Map map = new HashMap();
           map.put("result", result);
           return new ModelAndView(map, "compute.mustache");
