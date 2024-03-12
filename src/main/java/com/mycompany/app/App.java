@@ -61,7 +61,7 @@ public class App
           }
           System.out.println(inputList2);
 
-          String input3 = req.queryParams("input1");
+          String input3 = req.queryParams("input3");
           java.util.Scanner sc3 = new java.util.Scanner(input3);
           sc3.useDelimiter("[;\r\n]+");
           java.util.ArrayList<String> inputList3 = new java.util.ArrayList<>();
@@ -72,7 +72,7 @@ public class App
           }
           System.out.println(inputList);
 
-          String input4 = req.queryParams("input2").replaceAll("\\s","");
+          String input4 = req.queryParams("input4").replaceAll("\\s","");
 
         boolean result = App.search(inputList, inputList2, inputList3, input4);
         
