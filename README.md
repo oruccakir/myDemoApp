@@ -3,4 +3,4 @@
 
 
 heroku app address
-Demo site : https://dry-cove-58183-9d5a8d795a80.herokuapp.com/
+Demo site : https://dry-cove-58183-9d5a8d795a80.herokuapp.com/compute
